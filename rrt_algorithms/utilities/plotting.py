@@ -233,3 +233,38 @@ class Plot(object):
         Render the plot to a file
         """
         py.offline.plot(self.fig, filename=self.filename, auto_open=auto_open)
+
+
+    def plot_waypoint(self, X, x_init):
+        """
+        Plot starting point
+        :param X: Search Space
+        :param x_init: starting location
+        """
+        if X.dimensions == 2:  # plot in 2D
+            trace = go.Scatter(
+                x=[x_init[0]],
+                y=[x_init[1]],
+                line=dict(
+                    color="pink",
+                    width=10
+                ),
+                mode="markers"
+            )
+
+            self.data.append(trace)
+        elif X.dimensions == 3:  # plot in 3D
+            trace = go.Scatter3d(
+                x=[x_init[0]],
+                y=[x_init[1]],
+                z=[x_init[2]],
+                line=dict(
+                    color="pink",
+                    width=10
+                ),
+                mode="markers"
+            )
+
+            self.data.append(trace)
+        else:  # can't plot in higher dimensions
+            print("Cannot plot in > 3 dimensions")

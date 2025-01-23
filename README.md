@@ -1,16 +1,17 @@
-Drone Path Planning with RRT Connect
+## Drone Path Planning with RRT Connect
 
-This project adds custom scripts that utilize the RRT Connect algorithm from the main repository to plan paths for drone navigation.
+This project adds custom scripts that utilize the **RRT Connect** algorithm from the main repository to plan paths for drone navigation.
 
-Scripts:
-main-OverTheCones.py
-Plans the path for the drone to navigate to the goal by passing above the cones.
+### Scripts:
 
-main-BetweenCones.py
-Plans the path for the drone to navigate to the goal by passing between the two cones.
-Note: Currently under development, requiring a few fixes.
+- **`main-OverTheCones.py`**  
+  Plans the path for the drone to navigate to the goal by passing **above the cones**.
 
------------------------------------------------------------------------------------------------------
+- **`main-BetweenCones.py`**  
+  Plans the path for the drone to navigate to the goal by passing **between the two cones**.  
+  *Note: Currently under development, requiring a few fixes.*
+
+---
 
 # rrt
 Collection of rrt-based algorithms that scale to n-dimensions:

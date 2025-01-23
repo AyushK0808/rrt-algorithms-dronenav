@@ -32,7 +32,6 @@ class RRTConnect(RRTBase):
         x_nearest = self.get_nearest(tree, x_rand)
         x_new = steer(x_nearest, x_rand, self.q)
 
-        # Enforce waypoint constraint (we just pass over the cones)
         if enforce_waypoint and waypoint:
             if np.linalg.norm(np.array(x_new) - np.array(waypoint)) < self.q:
                 x_new = waypoint

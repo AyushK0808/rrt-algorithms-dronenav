@@ -268,3 +268,38 @@ class Plot(object):
             self.data.append(trace)
         else:  # can't plot in higher dimensions
             print("Cannot plot in > 3 dimensions")
+
+
+    def plot_cones(self, X, x_init):
+        """
+        Plot starting point
+        :param X: Search Space
+        :param x_init: starting location
+        """
+        if X.dimensions == 2:  # plot in 2D
+            trace = go.Scatter(
+                x=[x_init[0]],
+                y=[x_init[1]],
+                line=dict(
+                    color="black",
+                    width=10
+                ),
+                mode="markers"
+            )
+
+            self.data.append(trace)
+        elif X.dimensions == 3:  # plot in 3D
+            trace = go.Scatter3d(
+                x=[x_init[0]],
+                y=[x_init[1]],
+                z=[x_init[2]],
+                line=dict(
+                    color="black",
+                    width=10
+                ),
+                mode="markers"
+            )
+
+            self.data.append(trace)
+        else:  # can't plot in higher dimensions
+            print("Cannot plot in > 3 dimensions")
